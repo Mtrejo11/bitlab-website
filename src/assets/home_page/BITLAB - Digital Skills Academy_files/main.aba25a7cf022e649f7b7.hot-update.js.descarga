@@ -1,0 +1,243 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/NavBar.js":
+/*!**********************************!*\
+  !*** ./src/components/NavBar.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NavBar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_logo_fullcolor_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/logo-fullcolor.svg */ "./src/assets/logo-fullcolor.svg");
+/* harmony import */ var _assets_logo_fullcolor_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_logo_fullcolor_svg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _pages_Courses__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/Courses */ "./src/pages/Courses.js");
+/* harmony import */ var _pages_SoftwareCourse__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/SoftwareCourse */ "./src/pages/SoftwareCourse.js");
+/* harmony import */ var _MainPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../MainPage */ "./src/MainPage.js");
+var _jsxFileName = "C:\\Users\\mauri\\OneDrive\\Documentos\\BitLab Projects\\bitlab-website\\src\\components\\NavBar.js";
+
+
+
+
+
+
+
+const routes = [{
+  path: "",
+  component: _pages_Courses__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
+  path: "/courses",
+  component: _MainPage__WEBPACK_IMPORTED_MODULE_6__["default"]
+}, {
+  path: "/courses-software",
+  component: _pages_SoftwareCourse__WEBPACK_IMPORTED_MODULE_5__["default"]
+}];
+
+function RouteWithSubRoutes(route) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    path: route.path,
+    render: props => // pass the sub-routes down to keep nesting
+    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(route.component, Object.assign({}, props, {
+      routes: route.routes,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    })),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  });
+}
+
+class NavBar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super();
+    this.title = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    this.state = {
+      logo: props.logo,
+      propiedadades: "flex bg-transparent fixed items-center navigation justify-between flex-wrap px-24  full-width"
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({
+      logo: this.props.logo,
+      propiedadades: "flex bg-transparent text-white fixed items-center navigation justify-between flex-wrap px-24 w-full z-40"
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    let scrollTop = event.srcElement.body.scrollTop,
+        itemTranslate = Math.min(0, scrollTop / 3 - 60);
+    console.log(itemTranslate);
+    var y = window.scrollY;
+    console.log(y);
+
+    if (y > 120) {
+      this.setState({
+        logo: _assets_logo_fullcolor_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
+        propiedadades: "flex bg-white fixed items-center navigation justify-between flex-wrap text-black px-24 w-full z-40"
+      });
+    } else {
+      this.setState({
+        logo: this.props.logo,
+        propiedadades: "flex bg-transparent text-white fixed items-center navigation justify-between flex-wrap px-24 w-full z-40"
+      });
+    }
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["BrowserRouter"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      className: this.state.propiedadades,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: " flex-shrink-0 mr-8",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: this.state.logo,
+      className: "w-32",
+      alt: "",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "block lg:hidden",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400  hover:border-white",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+      className: "fill-current h-3 w-3",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }, "Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+      d: "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "w-full block items-end lg:flex lg:items-center lg:w-auto",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "text-sm lg:flex-grow",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 107
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+      to: "/courses",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108
+      },
+      __self: this
+    }, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "#responsive-header",
+      className: "block mt-4 Menu-item lg:inline-block lg:mt-0  text-base   py-6 px-6 ",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108
+      },
+      __self: this
+    }, "Cursos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "#responsive-header",
+      className: "block mt-4 Menu-item lg:inline-block lg:mt-0  text-base    py-6 px-8 ",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 109
+      },
+      __self: this
+    }, "Becas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "#responsive-header",
+      className: "block mt-4 Menu-item lg:inline-block lg:mt-0  text-base font-semibold   py-6 px-6 ",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 110
+      },
+      __self: this
+    }, " Eventos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "#responsive-header",
+      className: "block mt-4 Menu-item lg:inline-block lg:mt-0  text-base font-semibold  py-6 px-6 ",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 111
+      },
+      __self: this
+    }, "Aliados")))), routes.map((route, i) => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RouteWithSubRoutes, Object.assign({
+      key: i
+    }, route, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118
+      },
+      __self: this
+    }))));
+  }
+
+}
+
+/***/ })
+
+})
+//# sourceMappingURL=main.aba25a7cf022e649f7b7.hot-update.js.map

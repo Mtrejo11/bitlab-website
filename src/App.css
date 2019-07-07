@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -13,8 +12,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /*align-items: center;
+  justify-content: center;*/
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -23,6 +22,83 @@
   color: #61dafb;
 }
 
+.Header-background{
+  background-image: url('../src/assets/home_page/banner.jpg')
+}
+
+.full-width{
+  width: 100%;
+}
+
+.Header-content{
+  padding-left: 13vh;
+  padding-top: 15vh;
+  height: 90vh;
+}
+
+.Menu-item{
+  border-bottom: 3px solid transparent;
+  
+}
+.About-bitlab{
+  width: 100vh;
+}
+.Content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.Menu-item:hover{
+  border-bottom: 3px solid #5dffe9;
+  border-style: solid;
+}
+
+.Offers{
+  width: 80%;
+  text-align: start;
+}
+
+.navigation.scrolled{
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+.montserrat{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.text-purple{
+  color: #481ae7 !important;
+}
+
+.Intereses{
+  width: 100%;
+  text-align: start;
+}/*
+.interest-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}*/
+/*
+.arrow-next{
+  background-color: #00D2E5;
+  justify-content: center;
+  align-items: center;
+}*/
+.deseas-aprender{
+  height: 105vh;
+}
+#img-lentes{
+  position: absolute;
+  left:0;
+  height: 489px;
+}
+
+.bg-color{
+
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

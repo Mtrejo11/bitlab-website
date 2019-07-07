@@ -1,0 +1,24 @@
+.interest-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .arrow-next{
+      visibility: hidden;
+    background-color: #00D2E5;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .interest-card:hover > .arrow-next{
+      visibility: visible;
+  }
+
+.interest-card:hover > .div-1{
+    background-color: #481AE7;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
