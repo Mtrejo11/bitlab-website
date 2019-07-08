@@ -113,7 +113,7 @@ export const AVAILABLE_COURSES = [
             {
                 "week": "Semana 3",
                 "temas": ["Business Model Canvas","Definir las diferentes secciones del BMC","Presentar el Business Model Canvas de mi Startup.","¿Qué son las redes sociales?","¿Qué hacer y qué no hacer en Redes Sociales?"]
-            },
+            },  
         ]
 
     },
