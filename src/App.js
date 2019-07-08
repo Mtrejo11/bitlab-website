@@ -7,7 +7,7 @@ import '../src/styles/glyphstyle.css'
 
 import Courses from '../src/pages/Courses';
 import SoftwareCourse from '../src/pages/SoftwareCourse';
-
+import CourseDetail from '../src/pages/CourseDetail'
 import MainPage from '../src/MainPage';
 
 import { BrowserRouter as Router, Route, } from "react-router-dom";
@@ -24,7 +24,8 @@ export default class App extends React.Component {
 
          
           <Route path="/" exact component={MainPage} />
-          <Route path="/courses" component={Courses} />
+          <Route path="/courses" exact component={Courses} />
+          <Route path="/courses/details" exact component={CourseDetail} />
         </Router>
         <footer className="bg-gray-900 py-5 text-base justify-between px-24 flex">
           <img src={bitlab} class="" alt="" />

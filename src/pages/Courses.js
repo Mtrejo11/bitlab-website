@@ -7,11 +7,12 @@ import { AVAILABLE_COURSES } from '../assets/json-files/available_courses'
 import CourseCard from '../components/CourseCard'
 import CourseDetail from '../pages/CourseDetail'
 
-import { BrowserRouter as Router, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 
 var pay = false;
 var free = false;
+var item_selected = {};
 export default class Courses extends React.Component {
 
     constructor(props) {
@@ -27,6 +28,7 @@ export default class Courses extends React.Component {
             shown: AVAILABLE_COURSES,
             pagados: [],
             gratis: [],
+            redirect: false,
         };
     }
     componentWillMount() {
@@ -107,11 +109,20 @@ export default class Courses extends React.Component {
     }
 
 
+    setRedirect = (item) => {
+        this.setState({
+            redirect: true,
+        })
+        item_selected = item;
+    }
 
     renderRedirect = () => {
+
         if (this.state.redirect) {
-            this.setState({ mainPage: false })
-            return <Redirect push to='/courses' />
+            return <Redirect push to={{
+                pathname: '/courses/details',
+                state: { item: item_selected }
+            }} />
         }
     }
 
@@ -142,22 +153,26 @@ export default class Courses extends React.Component {
                     </div>
                     <div className="w-full flex mb-10">
                         <Router>
-                            <a href="" onClick={this.setRedirect} className="block mt-4 Menu-item lg:inline-block lg:mt-0  text-base   py-6 px-6 ">Cursos</a>
+                            {this.renderRedirect()}
+
+
                             <div className="flex flex-wrap ml-12 ">
                                 {this.state.shown.map(item => (
-                                    <div className="m-2">
-                                        <CourseCard
+                                    <div className="m-2" >
+                                        <a href="" onClick={() => this.setRedirect(item)}>
+                                            <CourseCard
 
-                                            imagen={item.imagen}
-                                            title={item.titulo}
-                                            encargado={item.instructor}
-                                            descripcion={item.descripcion}
-                                            horas={item.tiempo}
-                                        />
+                                                imagen={item.imagen}
+                                                title={item.titulo}
+                                                encargado={item.instructor}
+                                                descripcion={item.descripcion}
+                                                horas={item.tiempo}
+                                            />
+                                        </a>
                                     </div>
                                 ))}
                             </div>
-                            <Route path="/courses/" exact component={CourseDetail} />
+                            <Route path="/courses/details" exact component={CourseDetail} />
                         </Router>
                     </div>
                 </section>
